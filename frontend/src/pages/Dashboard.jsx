@@ -27,7 +27,9 @@ function Dashboard() {
   const upcoming = activities.filter(({ date, status }) => date >= today && status !== 'completed').sort((a, b) => a.date.localeCompare(b.date))
   const recent = activities.filter(({ date }) => date < today).sort((a, b) => b.date.localeCompare(a.date))
   const pendingCount = members.filter(({ status }) => status === 'pending').length
-  const unresolvedCount = penalties.filter(({ status }) => status !== 'resolved').length
+  const unresolvedCount = penalties.filter(
+  ({ status }) => status === 'for review' || status === 'pending',
+).length
 
   return (
     <>
@@ -49,7 +51,7 @@ function Dashboard() {
           <div className="col"><SummaryCard title="Total Members" value={members.length} icon={UsersRound} supportingText="Fictional member records" /></div>
           <div className="col"><SummaryCard title="Pending Registrations" value={pendingCount} icon={UserRoundPlus} supportingText="Awaiting review" /></div>
           <div className="col"><SummaryCard title="Upcoming Activities" value={upcoming.length} icon={CalendarDays} supportingText="Planned from today onward" /></div>
-          <div className="col"><SummaryCard title="Unresolved Penalties" value={unresolvedCount} icon={ShieldAlert} supportingText="Not marked resolved" /></div>
+          <div className="col"><SummaryCard title="Unresolved Penalties" value={unresolvedCount} icon={ShieldAlert} supportingText="Awaiting resolution" /></div>
         </div>
       </section>
 
