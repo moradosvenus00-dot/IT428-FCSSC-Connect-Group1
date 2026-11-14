@@ -20,6 +20,6 @@ export const penalties = [
 ]
 
 export const announcements = [
-  { id: 'ann-001', title: 'Welcome to FCSSC Connect', body: 'This is a fictional prototype announcement.', publishedAt: '2026-10-01', status: 'published' },
-  { id: 'ann-002', title: 'Peer Learning Session', body: 'Sample notice for the upcoming learning session.', publishedAt: '2026-11-10', activityId: 'act-002', status: 'published' },
+  { id: 'ann-001', title: 'Membership Registration and Fee', body: 'Complete the Membership Registration form and contact the FCSSC officers for membership fee and payment details.', publishedAt: '2026-10-01', status: 'published' },
+  { id: 'ann-002', title: 'Upcoming Events and Activities', body: 'Check the Activities page for upcoming FCSSC events, schedules, and venues.', publishedAt: '2026-11-10', activityId: 'act-002', status: 'published' },
 ]
